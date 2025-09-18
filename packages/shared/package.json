@@ -1,0 +1,21 @@
+{
+  "name": "@thread-js/shared",
+  "private": true,
+  "engines": {
+    "node": "22.15.x",
+    "npm": "10.9.x"
+  },
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "postinstall": "npm run build",
+    "lint:type": "npx tsc --noEmit",
+    "lint:js": "npx eslint . --max-warnings=0 --no-warn-ignored",
+    "lint": "concurrently \"npm:lint:*\"",
+    "build": "tsc && tsc-alias"
+  },
+  "dependencies": {
+    "joi": "17.13.3"
+  }
+}
